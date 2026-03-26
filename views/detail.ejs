@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head><title><%= post.title %></title></head>
-<body>
-    <h1><%= post.title %></h1>
-    <p><%= post.body %></p>
-    <hr>
-    <a href="/">Quay lại trang chủ</a>
-</body>
-</html>
+<%- include('layouts/header') %>
+<%- include('layouts/navbar') %>
+
+<div class="container mt-5">
+    <h1><%= item.name %></h1>
+    <p><%= item.description %></p>
+    <p>Giá: <%= item.price %></p>
+
+    <% if(item.hot) { %>
+        <p style="color:red;">🔥 Hot</p>
+    <% } %>
+</div>
+
+<%- include('layouts/footer') %>

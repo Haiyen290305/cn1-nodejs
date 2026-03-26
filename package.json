@@ -1,5 +1,5 @@
 {
-  "name": "project-blog",
+  "name": "th3",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,6 @@
   "type": "commonjs",
   "dependencies": {
     "ejs": "^5.0.1",
-    "express": "^5.2.1",
-    "mongoose": "^9.3.3"
+    "express": "^5.2.1"
   }
 }

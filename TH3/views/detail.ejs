@@ -1,0 +1,27 @@
+<%- include('layouts/header') %>
+<%- include('layouts/navbar') %>
+
+<div class="container mt-5">
+    <div class="row bg-white p-4 rounded shadow-sm">
+        <div class="col-md-6 text-center">
+            <img src="<%= item.image %>" class="img-fluid rounded shadow" alt="...">
+        </div>
+        <div class="col-md-6 px-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/list">Danh sách</a></li>
+                  <li class="breadcrumb-item active"><%= item.name %></li>
+                </ol>
+            </nav>
+            <h1 class="display-4 fw-bold text-success"><%= item.name %></h1>
+            <p class="lead mt-3"><%= item.description %></p>
+            <div class="my-4">
+                <h4 class="text-danger fw-bold">Chỉ từ: <%= item.price.toLocaleString() %> VNĐ</h4>
+                <p>Trạng thái: <strong><%= item.hot ? 'Đang rất nhiều khách đặt' : 'Đang còn chỗ' %></strong></p>
+            </div>
+            <button class="btn btn-success btn-lg px-5 shadow">Đặt tour ngay</button>
+        </div>
+    </div>
+</div>
+
+<%- include('layouts/footer') %>

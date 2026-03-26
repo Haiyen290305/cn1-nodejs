@@ -1,54 +1,27 @@
-<!DOCTYPE html>
-<html>
+<%- include('layouts/header') %>
+<%- include('layouts/navbar') %>
 
-<head>
-    <title>Blog của Yến</title>
-   <style>
-    body {
-        font-family: sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f4f4f4; 
-    }
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Welcome!</div>
+        <div class="masthead-heading text-uppercase">Du lịch Việt Nam</div>
+    </div>
+</header>
 
-    h1 {
-        color: #333; 
-    }
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container text-center">
+        <h2>Dịch vụ</h2>
+        <p>Tour du lịch chất lượng cao</p>
+    </div>
+</section>
 
-    a {
-        text-decoration: none; 
-        color: #007bff; 
-    }
+<!-- Portfolio-->
+<section class="page-section bg-light">
+    <div class="container">
+        <h2 class="text-center">Điểm đến nổi bật</h2>
+    </div>
+</section>
 
-    a:hover {
-        text-decoration: underline; 
-    }
-
-    li {
-        background: white; 
-        padding: 15px;
-        margin-bottom: 10px;
-        border-radius: 8px; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    }
-</style>
-</head>
-<body>
-    <h1>Danh sách bài viết</h1>
-    <a href="/blogposts/new"> + Viết bài mới</a>
-    <hr>
-    <% posts.forEach(post => { %>
-        <div class="post">
-            <strong><%= post.title %></strong> <br>
-            <small><%= post.createdAt.toLocaleDateString() %></small> <br>
-            <a href="/blogposts/<%= post._id %>">Xem chi tiết</a> | 
-            <a href="/blogposts/edit/<%= post._id %>">Sửa</a> | 
-            <form action="/blogposts/delete/<%= post._id %>" method="POST" style="display:inline;">
-                <button class="btn-delete" onclick="return confirm('Xóa nhé?')">Xóa</button>
-            </form>
-        </div>
-    <% }) %>
-</body>
-</html>
+<%- include('layouts/footer') %>
