@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sửa bài viết</title></head>
+<body>
+    <h1>Chỉnh sửa bài viết</h1>
+    <form action="/blogposts/update/<%= post._id %>" method="POST">
+        <p>Tiêu đề: <input type="text" name="title" value="<%= post.title %>"></p>
+        <p>Nội dung: <textarea name="body" rows="5"><%= post.body %></textarea></p>
+        <button type="submit">Cập nhật</button>
+    </form>
+    <a href="/">Hủy</a>
+</body>
+</html>
