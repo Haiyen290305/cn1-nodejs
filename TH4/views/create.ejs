@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head><title>Tạo bài mới</title></head>
-<body>
-    <h1>Tạo bài viết mới</h1>
-    <form action="/blogposts/store" method="POST">
-        <p>Tiêu đề: <input type="text" name="title" required></p>
-        <p>Nội dung: <textarea name="body" rows="5" required></textarea></p>
-        <button type="submit">Lưu bài viết</button>
-    </form>
-    <a href="/">Quay lại</a>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bài mới - My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0" style="border-radius: 20px; overflow: hidden;">
+                    <div class="card-header bg-primary text-white p-4">
+                        <h3 class="mb-0 fw-bold"><i class="bi bi-pencil-square"></i> Tạo bài viết mới</h3>
+                    </div>
+                    <div class="card-body p-4 p-md-5">
+                        <form action="/blogposts/store" method="POST">
+                            
+                            <div class="mb-4">
+                                <label for="title" class="form-label fw-bold">Tiêu đề bài viết</label>
+                                <input type="text" class="form-control rounded-pill px-4" id="title" name="title" placeholder="Nhập tiêu đề hấp dẫn..." required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="category" class="form-label fw-bold">Danh mục bài viết</label>
+                                <select class="form-select rounded-pill px-4" id="category" name="category">
+                                    <option value="Công nghệ">Công nghệ</option>
+                                    <option value="Đời sống">Đời sống</option>
+                                    <option value="Học tập">Học tập</option>
+                                    <option value="Du lịch">Du lịch</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="body" class="form-label fw-bold">Nội dung bài viết</label>
+                                <textarea class="form-control" id="body" name="body" rows="8" style="border-radius: 15px;" placeholder="Viết nội dung bài viết vào đây..." required></textarea>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-5">
+                                <a href="/" class="text-decoration-none text-muted fw-bold">
+                                    <i class="bi bi-arrow-left"></i> Quay lại trang chủ
+                                </a>
+                                <button type="submit" class="btn btn-primary px-5 rounded-pill shadow-sm fw-bold py-2">
+                                    Lưu bài viết ngay
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

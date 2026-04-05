@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head><title>Sửa bài viết</title></head>
-<body>
-    <h1>Chỉnh sửa bài viết</h1>
-    <form action="/blogposts/update/<%= post._id %>" method="POST">
-        <p>Tiêu đề: <input type="text" name="title" value="<%= post.title %>"></p>
-        <p>Nội dung: <textarea name="body" rows="5"><%= post.body %></textarea></p>
-        <button type="submit">Cập nhật</button>
-    </form>
-    <a href="/">Hủy</a>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa: <%= post.title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                    <div class="card-header bg-warning text-dark p-3 fw-bold">
+                        <h3 class="mb-0"><i class="bi bi-pencil-square"></i> Chỉnh sửa bài viết</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/blogposts/update/<%= post._id %>" method="POST">
+                            
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-bold">Tiêu đề bài viết</label>
+                                <input type="text" class="form-control" id="title" name="title" 
+                                       value="<%= post.title %>" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="body" class="form-label fw-bold">Nội dung</label>
+                                <textarea class="form-control" id="body" name="body" rows="10" required><%= post.body %></textarea>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <a href="/" class="btn btn-outline-secondary px-4 rounded-pill">
+                                    Hủy bỏ
+                                </a>
+                                <button type="submit" class="btn btn-warning px-5 rounded-pill fw-bold shadow-sm text-dark">
+                                    Lưu thay đổi
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-4 border-0 shadow-sm" role="alert">
+                    <strong>Mẹo:</strong> Bạn có thể cập nhật nội dung mới nhất và nhấn "Lưu thay đổi" để làm mới bài viết trên trang chủ.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
