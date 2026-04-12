@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Analyzer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="gradient-bg">
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="/"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+            <span class="nav-title">📡 Request Analyzer</span>
+        </div>
+        <div class="status-badge"><span class="dot"></span> Live</div>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h2>Trang Request đang hoạt động</h2>
+            <p>Thông tin chi tiết về gói tin HTTP mà server nhận được từ trình duyệt.</p>
+        </div>
+
+        <div class="grid-request">
+            <div class="card stat-card">
+                <div class="info-group">
+                    <span class="label">METHOD</span>
+                    <span class="value badge-method">GET</span>
+                </div>
+                <div class="divider"></div>
+                <div class="info-group">
+                    <span class="label">STATUS</span>
+                    <span class="value badge-status">200 OK</span>
+                </div>
+            </div>
+
+            <div class="card code-card">
+                <div class="card-top">
+                    <span><i class="fa-solid fa-code"></i> Raw Header Data</span>
+                    <button class="copy-btn"><i class="fa-regular fa-copy"></i> Copy</button>
+                </div>
+                <div class="code-wrapper">
+                    <pre><code>{
+  "host": "localhost:3000",
+  "connection": "keep-alive",
+  "user-agent": "Mozilla/5.0...",
+  "accept-language": "en-US,en;q=0.9",
+  "sec-fetch-dest": "document"
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

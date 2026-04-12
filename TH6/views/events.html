@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event System</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="logo">⚡ Event System</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Kích hoạt event thuê nhà</h3>
+                <p>Nhập tên khách hàng để bắt đầu quy trình</p>
+            </div>
+
+            <form action="/event" method="GET">
+                <div class="form-group">
+                    <label for="name">Tên khách hàng</label>
+                    <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+                </div>
+                <button type="submit" class="btn-trigger">Trigger Now</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

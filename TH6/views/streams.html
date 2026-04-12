@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Data Pipeline</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="gradient-bg">
+
+    <nav class="navbar">
+        <a href="/"><i class="fa-solid fa-arrow-left"></i> Home</a>
+        <span class="nav-title">🌊 Stream System</span>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h2>Data Pipeline Control</h2>
+            <p>Quản lý luồng dữ liệu thông qua các phương thức Stream tiêu chuẩn.</p>
+        </div>
+
+        <div class="stream-grid">
+            <div class="card">
+                <div class="icon-circle blue"><i class="fa-solid fa-file-import"></i></div>
+                <h3>Readable Stream</h3>
+                <p>Đọc dữ liệu từ file hoặc nguồn lưu trữ.</p>
+                <a href="/read" class="action-btn-link">Đọc nội dung <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="icon-circle green"><i class="fa-solid fa-file-export"></i></div>
+                <h3>Writable Stream</h3>
+                <form method="POST" action="/write" class="form-control">
+                    <input name="data" placeholder="Nhập dữ liệu cần ghi..." required>
+                    <button type="submit">Ghi File</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="icon-circle purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Transform Stream</h3>
+                <p>Xử lý và biến đổi dữ liệu (Uppercase).</p>
+                <a href="/transform" class="btn-primary">Chuyển đổi ngay</a>
+            </div>
+
+            <div class="card">
+                <div class="icon-circle gold"><i class="fa-solid fa-repeat"></i></div>
+                <h3>Duplex Stream</h3>
+                <div class="input-group">
+                    <form method="POST" action="/duplex" style="display: flex; width: 100%; gap: 5px;">
+                        <input name="data" placeholder="Echo test..." style="flex: 1;">
+                        <button type="submit" class="icon-send"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
