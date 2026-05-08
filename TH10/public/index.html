@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Chat App - Yến</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <h1>Realtime Chat</h1>
+            <p>Nhập tên để bắt đầu trò chuyện</p>
+            <input type="text" id="username-input" placeholder="Tên hiển thị...">
+            <button id="join-btn">Vào Chat</button>
+        </div>
+    </div>
+
+    <div id="chat-app">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="my-profile">
+                    <div class="avatar-container">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Yen" alt="avatar">
+                        <span class="status-dot online"></span>
+                    </div>
+                    <div class="my-info">
+                        <h2 id="my-name">Yến</h2>
+                        <p class="status-text">Đang hoạt động</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-user" placeholder="Tìm người dùng...">
+            </div>
+
+            <div class="online-box">
+                <h3>USER ONLINE (<span id="online-count">0</span>)</h3>
+                <ul id="user-list">
+                    </ul>
+            </div>
+
+            <div class="customization-section">
+                <h3>ĐỔI MÀU CHAT</h3>
+                <div class="color-options">
+                    <div class="color-dot active" data-color="#007bff" style="background: #007bff;"></div>
+                    <div class="color-dot" data-color="#ff4757" style="background: #ff4757;"></div>
+                    <div class="color-dot" data-color="#2ed573" style="background: #2ed573;"></div>
+                    <div class="color-dot" data-color="#a45ee5" style="background: #a45ee5;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="chat-info">
+                    <h2 id="chat-with-title">Chọn một người để chat</h2>
+                </div>
+                <div class="chat-actions">
+                    <button id="open-game-btn" title="Chơi Caro">
+                        <i class="fa-solid fa-gamepad"></i> 🎮
+                    </button>
+                </div>
+            </header>
+
+            <div id="message-display">
+                <div class="welcome-msg">Chào mừng bạn quay trở lại!</div>
+            </div>
+
+            <div class="input-container">
+                <form id="chat-form">
+                    <button type="button" id="emoji-btn" class="icon-btn">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </button>
+                    
+                    <label for="image-input" class="icon-btn" id="image-btn">
+                        <i class="fa-solid fa-camera"></i>
+                    </label>
+                    <input type="file" id="image-input" accept="image/*" hidden>
+
+                    <input type="text" id="msg-input" placeholder="Nhập tin nhắn..." autocomplete="off">
+
+                    <button type="submit" id="send-btn">Gửi</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div id="game-modal" class="modal-overlay">
+        <div class="game-box">
+            <div class="game-header">
+                <h2>Game Cờ Caro</h2>
+                <button id="close-game-btn">&times;</button>
+            </div>
+            <div id="game-info">
+                Lượt hiện tại: <span id="current-turn">X</span>
+            </div>
+            <div id="board">
+                </div>
+            <button id="reset-game">Chơi lại</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
